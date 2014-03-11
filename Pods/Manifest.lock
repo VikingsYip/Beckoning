@@ -1,0 +1,22 @@
+PODS:
+  - Expecta (0.2.4)
+  - Foursquare-API-v2 (1.4.4)
+  - OCHamcrest (3.0.1)
+  - OCMockito (1.1.0):
+    - OCHamcrest (~> 3.0)
+  - Specta (0.2.1)
+
+DEPENDENCIES:
+  - Expecta (~> 0.2.4)
+  - Foursquare-API-v2 (~> 1.4.4)
+  - OCMockito (~> 1.1)
+  - Specta (~> 0.2.1)
+
+SPEC CHECKSUMS:
+  Expecta: 5c147dedfea5fbcf773995f7e65020abcc936ce5
+  Foursquare-API-v2: cb5609c318903a4d80a58d7d476298362e889a9b
+  OCHamcrest: 782c52ae8c673e5d6060a65005cfd26d20d519ba
+  OCMockito: 317fa0cf75c9b0d73d2be335789c556537be7fd2
+  Specta: 2d06220591110c6d9757d8be8ecf8e63aa40dc2a
+
+COCOAPODS: 0.29.0

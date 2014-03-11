@@ -6,41 +6,49 @@
 //  Copyright (c) 2014 Monokromik. All rights reserved.
 //
 
+@import CoreLocation;
 #import "BKAppDelegate.h"
+#import "MNBeaconManager.h"
+#import <Foursquare2.h>
+#import "BKConstants.h"
+#import "BKFourSquareTrigger.h"
+#import "BKGeneralRegionTrigger.h"
+
+@interface BKAppDelegate() <MNBeaconManagerObserver>
+@property (nonatomic, strong) MNBeaconManager *beaconManager;
+@property (nonatomic, strong) BKFourSquareTrigger *foursquareTrigger;
+@property (nonatomic, strong) BKGeneralRegionTrigger *generalRegionTrigger;
+@end
+
+
 
 @implementation BKAppDelegate
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [Foursquare2 setupFoursquareWithClientId:@"QIIFRPAMQRFHOKIRRSV1D5K2JVF3GFPOAD3MSU0VYHIZW1VG"
+                                      secret:@"V4QWF4Y0EAUFMVWI0W1H4KEI2CDKHDY1DPXPHLMSVHXM2JWI"
+                                 callbackURL:@"beckoning://foursquare"];
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    // Override point for customization after application launch.
+    CLBeaconRegion *regionFor4SQ = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:BKProximityUUIDString]
+                                                                           major:BKBeaconMajorPurple
+                                                                      identifier:BKProximityIdentifierFoursquare];
+
+    CLBeaconRegion *regionForGeneral = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:BKProximityUUIDString]
+                                                                      identifier:BKProximityIdentifierGeneral];
+
+    
+    self.beaconManager = [[MNBeaconManager alloc] init];
+    self.foursquareTrigger = [[BKFourSquareTrigger alloc] init];
+    self.generalRegionTrigger = [[BKGeneralRegionTrigger alloc] init];
+    
+    [self.beaconManager addObserver:self.foursquareTrigger forBeaconRegion:regionFor4SQ];
+    [self.beaconManager addObserver:self.generalRegionTrigger forBeaconRegion:regionForGeneral];
+    
     return YES;
 }
-							
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-}
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [Foursquare2 handleURL:url];
 }
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18D5CAF53375470BBAEA761E /* libPods-Beckoning.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EE7924166242038E6A9699 /* libPods-Beckoning.a */; };
 		2868E9BA18AE0A6B00D3DC72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2868E9B918AE0A6B00D3DC72 /* Foundation.framework */; };
 		2868E9BC18AE0A6B00D3DC72 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2868E9BB18AE0A6B00D3DC72 /* CoreGraphics.framework */; };
 		2868E9BE18AE0A6B00D3DC72 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2868E9BD18AE0A6B00D3DC72 /* UIKit.framework */; };
@@ -14,14 +15,21 @@
 		2868E9C618AE0A6B00D3DC72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2868E9C518AE0A6B00D3DC72 /* main.m */; };
 		2868E9CA18AE0A6B00D3DC72 /* BKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2868E9C918AE0A6B00D3DC72 /* BKAppDelegate.m */; };
 		2868E9CD18AE0A6B00D3DC72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2868E9CB18AE0A6B00D3DC72 /* Main.storyboard */; };
-		2868E9D018AE0A6B00D3DC72 /* BKMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2868E9CF18AE0A6B00D3DC72 /* BKMasterViewController.m */; };
-		2868E9D318AE0A6B00D3DC72 /* BKDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2868E9D218AE0A6B00D3DC72 /* BKDetailViewController.m */; };
 		2868E9D518AE0A6B00D3DC72 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2868E9D418AE0A6B00D3DC72 /* Images.xcassets */; };
 		2868E9DC18AE0A6B00D3DC72 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2868E9DB18AE0A6B00D3DC72 /* XCTest.framework */; };
 		2868E9DD18AE0A6B00D3DC72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2868E9B918AE0A6B00D3DC72 /* Foundation.framework */; };
 		2868E9DE18AE0A6B00D3DC72 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2868E9BD18AE0A6B00D3DC72 /* UIKit.framework */; };
 		2868E9E618AE0A6B00D3DC72 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2868E9E418AE0A6B00D3DC72 /* InfoPlist.strings */; };
-		2868E9E818AE0A6B00D3DC72 /* BeckoningTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2868E9E718AE0A6B00D3DC72 /* BeckoningTests.m */; };
+		286BF3F918C9DF0700EABFF0 /* BKFourSquareTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 286BF3F818C9DF0700EABFF0 /* BKFourSquareTrigger.m */; };
+		286FB89818BC363700D6A3C4 /* BKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 286FB89718BC363700D6A3C4 /* BKHomeViewController.m */; };
+		286FB89B18BC390300D6A3C4 /* BKMonitoringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 286FB89A18BC390300D6A3C4 /* BKMonitoringViewController.m */; };
+		28794C1018CDA364002BF482 /* BKGeneralRegionTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 28794C0F18CDA364002BF482 /* BKGeneralRegionTrigger.m */; };
+		287EFD7A18CD7A6600D6AEE2 /* BKConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 287EFD7918CD7A6600D6AEE2 /* BKConstants.m */; };
+		28C78D4118AE0BAE00D6A676 /* BKRangingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C78D4018AE0BAE00D6A676 /* BKRangingViewController.m */; };
+		28C78D4418AE0E8A00D6A676 /* MNBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C78D4318AE0E8A00D6A676 /* MNBeaconManager.m */; };
+		28FFC70B18CB863D00C1E56B /* MNBeaconManagerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FFC70A18CB863D00C1E56B /* MNBeaconManagerSpec.m */; };
+		28FFC70C18CC0BB000C1E56B /* MNBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C78D4318AE0E8A00D6A676 /* MNBeaconManager.m */; };
+		8AEE583988C740B7A4F9EE71 /* libPods-BeckoningTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A97AA2AC14224DDA92C1BB02 /* libPods-BeckoningTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,16 +54,31 @@
 		2868E9C818AE0A6B00D3DC72 /* BKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKAppDelegate.h; sourceTree = "<group>"; };
 		2868E9C918AE0A6B00D3DC72 /* BKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKAppDelegate.m; sourceTree = "<group>"; };
 		2868E9CC18AE0A6B00D3DC72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2868E9CE18AE0A6B00D3DC72 /* BKMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKMasterViewController.h; sourceTree = "<group>"; };
-		2868E9CF18AE0A6B00D3DC72 /* BKMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKMasterViewController.m; sourceTree = "<group>"; };
-		2868E9D118AE0A6B00D3DC72 /* BKDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKDetailViewController.h; sourceTree = "<group>"; };
-		2868E9D218AE0A6B00D3DC72 /* BKDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKDetailViewController.m; sourceTree = "<group>"; };
 		2868E9D418AE0A6B00D3DC72 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2868E9DA18AE0A6B00D3DC72 /* BeckoningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeckoningTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2868E9DB18AE0A6B00D3DC72 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2868E9E318AE0A6B00D3DC72 /* BeckoningTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BeckoningTests-Info.plist"; sourceTree = "<group>"; };
 		2868E9E518AE0A6B00D3DC72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2868E9E718AE0A6B00D3DC72 /* BeckoningTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeckoningTests.m; sourceTree = "<group>"; };
+		286BF3F718C9DF0700EABFF0 /* BKFourSquareTrigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKFourSquareTrigger.h; sourceTree = "<group>"; };
+		286BF3F818C9DF0700EABFF0 /* BKFourSquareTrigger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKFourSquareTrigger.m; sourceTree = "<group>"; };
+		286FB89618BC363700D6A3C4 /* BKHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKHomeViewController.h; sourceTree = "<group>"; };
+		286FB89718BC363700D6A3C4 /* BKHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKHomeViewController.m; sourceTree = "<group>"; };
+		286FB89918BC390300D6A3C4 /* BKMonitoringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKMonitoringViewController.h; sourceTree = "<group>"; };
+		286FB89A18BC390300D6A3C4 /* BKMonitoringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKMonitoringViewController.m; sourceTree = "<group>"; };
+		28794C0E18CDA364002BF482 /* BKGeneralRegionTrigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKGeneralRegionTrigger.h; sourceTree = "<group>"; };
+		28794C0F18CDA364002BF482 /* BKGeneralRegionTrigger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKGeneralRegionTrigger.m; sourceTree = "<group>"; };
+		287EFD7818CD7A6600D6AEE2 /* BKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKConstants.h; sourceTree = "<group>"; };
+		287EFD7918CD7A6600D6AEE2 /* BKConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKConstants.m; sourceTree = "<group>"; };
+		28C78D3F18AE0BAE00D6A676 /* BKRangingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKRangingViewController.h; sourceTree = "<group>"; };
+		28C78D4018AE0BAE00D6A676 /* BKRangingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKRangingViewController.m; sourceTree = "<group>"; };
+		28C78D4218AE0E8A00D6A676 /* MNBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNBeaconManager.h; sourceTree = "<group>"; };
+		28C78D4318AE0E8A00D6A676 /* MNBeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNBeaconManager.m; sourceTree = "<group>"; };
+		28FFC70A18CB863D00C1E56B /* MNBeaconManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNBeaconManagerSpec.m; sourceTree = "<group>"; };
+		2F6100A82F98472AB1639301 /* Pods-Beckoning.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beckoning.xcconfig"; path = "Pods/Pods-Beckoning.xcconfig"; sourceTree = "<group>"; };
+		7B13EA4B3E91409E9755798F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		94EE7924166242038E6A9699 /* libPods-Beckoning.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Beckoning.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F7CD21D28CC409FB751D15D /* Pods-BeckoningTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeckoningTests.xcconfig"; path = "Pods/Pods-BeckoningTests.xcconfig"; sourceTree = "<group>"; };
+		A97AA2AC14224DDA92C1BB02 /* libPods-BeckoningTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeckoningTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +89,7 @@
 				2868E9BC18AE0A6B00D3DC72 /* CoreGraphics.framework in Frameworks */,
 				2868E9BE18AE0A6B00D3DC72 /* UIKit.framework in Frameworks */,
 				2868E9BA18AE0A6B00D3DC72 /* Foundation.framework in Frameworks */,
+				18D5CAF53375470BBAEA761E /* libPods-Beckoning.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +100,7 @@
 				2868E9DC18AE0A6B00D3DC72 /* XCTest.framework in Frameworks */,
 				2868E9DE18AE0A6B00D3DC72 /* UIKit.framework in Frameworks */,
 				2868E9DD18AE0A6B00D3DC72 /* Foundation.framework in Frameworks */,
+				8AEE583988C740B7A4F9EE71 /* libPods-BeckoningTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +114,8 @@
 				2868E9E118AE0A6B00D3DC72 /* BeckoningTests */,
 				2868E9B818AE0A6B00D3DC72 /* Frameworks */,
 				2868E9B718AE0A6B00D3DC72 /* Products */,
+				2F6100A82F98472AB1639301 /* Pods-Beckoning.xcconfig */,
+				9F7CD21D28CC409FB751D15D /* Pods-BeckoningTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +135,9 @@
 				2868E9BB18AE0A6B00D3DC72 /* CoreGraphics.framework */,
 				2868E9BD18AE0A6B00D3DC72 /* UIKit.framework */,
 				2868E9DB18AE0A6B00D3DC72 /* XCTest.framework */,
+				7B13EA4B3E91409E9755798F /* libPods.a */,
+				94EE7924166242038E6A9699 /* libPods-Beckoning.a */,
+				A97AA2AC14224DDA92C1BB02 /* libPods-BeckoningTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,13 +145,23 @@
 		2868E9BF18AE0A6B00D3DC72 /* Beckoning */ = {
 			isa = PBXGroup;
 			children = (
+				28C78D4218AE0E8A00D6A676 /* MNBeaconManager.h */,
+				28C78D4318AE0E8A00D6A676 /* MNBeaconManager.m */,
+				287EFD7818CD7A6600D6AEE2 /* BKConstants.h */,
+				287EFD7918CD7A6600D6AEE2 /* BKConstants.m */,
 				2868E9C818AE0A6B00D3DC72 /* BKAppDelegate.h */,
 				2868E9C918AE0A6B00D3DC72 /* BKAppDelegate.m */,
+				286FB89618BC363700D6A3C4 /* BKHomeViewController.h */,
+				286FB89718BC363700D6A3C4 /* BKHomeViewController.m */,
+				286FB89918BC390300D6A3C4 /* BKMonitoringViewController.h */,
+				286FB89A18BC390300D6A3C4 /* BKMonitoringViewController.m */,
+				28C78D3F18AE0BAE00D6A676 /* BKRangingViewController.h */,
+				28C78D4018AE0BAE00D6A676 /* BKRangingViewController.m */,
+				286BF3F718C9DF0700EABFF0 /* BKFourSquareTrigger.h */,
+				286BF3F818C9DF0700EABFF0 /* BKFourSquareTrigger.m */,
+				28794C0E18CDA364002BF482 /* BKGeneralRegionTrigger.h */,
+				28794C0F18CDA364002BF482 /* BKGeneralRegionTrigger.m */,
 				2868E9CB18AE0A6B00D3DC72 /* Main.storyboard */,
-				2868E9CE18AE0A6B00D3DC72 /* BKMasterViewController.h */,
-				2868E9CF18AE0A6B00D3DC72 /* BKMasterViewController.m */,
-				2868E9D118AE0A6B00D3DC72 /* BKDetailViewController.h */,
-				2868E9D218AE0A6B00D3DC72 /* BKDetailViewController.m */,
 				2868E9D418AE0A6B00D3DC72 /* Images.xcassets */,
 				2868E9C018AE0A6B00D3DC72 /* Supporting Files */,
 			);
@@ -142,7 +182,7 @@
 		2868E9E118AE0A6B00D3DC72 /* BeckoningTests */ = {
 			isa = PBXGroup;
 			children = (
-				2868E9E718AE0A6B00D3DC72 /* BeckoningTests.m */,
+				28FFC70A18CB863D00C1E56B /* MNBeaconManagerSpec.m */,
 				2868E9E218AE0A6B00D3DC72 /* Supporting Files */,
 			);
 			path = BeckoningTests;
@@ -164,9 +204,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2868E9EB18AE0A6B00D3DC72 /* Build configuration list for PBXNativeTarget "Beckoning" */;
 			buildPhases = (
+				5AFE73D473E140F6B179E212 /* Check Pods Manifest.lock */,
 				2868E9B218AE0A6B00D3DC72 /* Sources */,
 				2868E9B318AE0A6B00D3DC72 /* Frameworks */,
 				2868E9B418AE0A6B00D3DC72 /* Resources */,
+				63E2C105B2154688A0E5A68C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -181,9 +223,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2868E9EE18AE0A6B00D3DC72 /* Build configuration list for PBXNativeTarget "BeckoningTests" */;
 			buildPhases = (
+				E7E8E9DD723F4E018491F65E /* Check Pods Manifest.lock */,
 				2868E9D618AE0A6B00D3DC72 /* Sources */,
 				2868E9D718AE0A6B00D3DC72 /* Frameworks */,
 				2868E9D818AE0A6B00D3DC72 /* Resources */,
+				03EED5C7818F413CAA9CF959 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,15 +294,83 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03EED5C7818F413CAA9CF959 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-BeckoningTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5AFE73D473E140F6B179E212 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		63E2C105B2154688A0E5A68C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Beckoning-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7E8E9DD723F4E018491F65E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2868E9B218AE0A6B00D3DC72 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28C78D4118AE0BAE00D6A676 /* BKRangingViewController.m in Sources */,
+				286FB89818BC363700D6A3C4 /* BKHomeViewController.m in Sources */,
+				287EFD7A18CD7A6600D6AEE2 /* BKConstants.m in Sources */,
 				2868E9C618AE0A6B00D3DC72 /* main.m in Sources */,
-				2868E9D018AE0A6B00D3DC72 /* BKMasterViewController.m in Sources */,
-				2868E9D318AE0A6B00D3DC72 /* BKDetailViewController.m in Sources */,
 				2868E9CA18AE0A6B00D3DC72 /* BKAppDelegate.m in Sources */,
+				286BF3F918C9DF0700EABFF0 /* BKFourSquareTrigger.m in Sources */,
+				286FB89B18BC390300D6A3C4 /* BKMonitoringViewController.m in Sources */,
+				28C78D4418AE0E8A00D6A676 /* MNBeaconManager.m in Sources */,
+				28794C1018CDA364002BF482 /* BKGeneralRegionTrigger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +378,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2868E9E818AE0A6B00D3DC72 /* BeckoningTests.m in Sources */,
+				28FFC70B18CB863D00C1E56B /* MNBeaconManagerSpec.m in Sources */,
+				28FFC70C18CC0BB000C1E56B /* MNBeaconManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,12 +493,14 @@
 		};
 		2868E9EC18AE0A6B00D3DC72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F6100A82F98472AB1639301 /* Pods-Beckoning.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Beckoning/Beckoning-Prefix.pch";
 				INFOPLIST_FILE = "Beckoning/Beckoning-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -393,12 +508,14 @@
 		};
 		2868E9ED18AE0A6B00D3DC72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F6100A82F98472AB1639301 /* Pods-Beckoning.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Beckoning/Beckoning-Prefix.pch";
 				INFOPLIST_FILE = "Beckoning/Beckoning-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -406,6 +523,7 @@
 		};
 		2868E9EF18AE0A6B00D3DC72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F7CD21D28CC409FB751D15D /* Pods-BeckoningTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Beckoning.app/Beckoning";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -428,6 +546,7 @@
 		};
 		2868E9F018AE0A6B00D3DC72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F7CD21D28CC409FB751D15D /* Pods-BeckoningTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Beckoning.app/Beckoning";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -463,6 +582,7 @@
 				2868E9ED18AE0A6B00D3DC72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2868E9EE18AE0A6B00D3DC72 /* Build configuration list for PBXNativeTarget "BeckoningTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +591,7 @@
 				2868E9F018AE0A6B00D3DC72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
