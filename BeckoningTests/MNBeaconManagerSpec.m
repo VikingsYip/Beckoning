@@ -26,15 +26,25 @@ describe(@"MNBeaconManager", ^{
 
     context(@"when handing observers", ^{
         beforeAll(^{
-            beaconManager = [[MNBeaconManager alloc] init];
             beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:[NSUUID UUID] identifier:@"main"];
             altBeaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:[NSUUID UUID] identifier:@"alt"];
-            
+        });
+        
+        beforeEach(^{
+            beaconManager = [[MNBeaconManager alloc] init];
             observerForMainOnly = mockObjectAndProtocol([NSObject class], @protocol(MNBeaconManagerObserver));
             observerForAltOnly = mockObjectAndProtocol([NSObject class], @protocol(MNBeaconManagerObserver));
             observerForMainAndAlt = mockObjectAndProtocol([NSObject class], @protocol(MNBeaconManagerObserver));
         });
+        
+        afterEach(^{
+            beaconManager = nil;
+            observerForMainOnly = nil;
+            observerForAltOnly = nil;
+            observerForMainAndAlt = nil;
+        });
 
+        
         it(@"adds observers", ^{
             [beaconManager addObserver:observerForMainOnly forBeaconRegion:beaconRegion];
             [beaconManager addObserver:observerForAltOnly forBeaconRegion:altBeaconRegion];
@@ -48,31 +58,63 @@ describe(@"MNBeaconManager", ^{
             expect([beaconManager observersForBeaconRegion:altBeaconRegion]).to.haveCountOf(2);
             expect([beaconManager observersForBeaconRegion:altBeaconRegion]).to.contain(observerForMainAndAlt);
             expect([beaconManager observersForBeaconRegion:altBeaconRegion]).to.contain(observerForAltOnly);
-        });
-        
-        it(@"replaces existing observer if observer is re-added", ^{
-            [beaconManager addObserver:observerForMainOnly forBeaconRegion:beaconRegion];
             
+            [beaconManager removeObserver:observerForMainOnly forBeaconRegion:beaconRegion];
+            [beaconManager removeObserver:observerForMainAndAlt forBeaconRegion:beaconRegion];
+            [beaconManager addObserver:observerForMainOnly forBeaconRegion:beaconRegion];
+            [beaconManager addObserver:observerForMainAndAlt forBeaconRegion:beaconRegion];
+
             expect([beaconManager observersForBeaconRegion:beaconRegion]).to.haveCountOf(2);
             expect([beaconManager observersForBeaconRegion:beaconRegion]).to.contain(observerForMainOnly);
             expect([beaconManager observersForBeaconRegion:beaconRegion]).to.contain(observerForMainAndAlt);
         });
+        
+        
+        it(@"replaces existing observer if same observer is re-added", ^{
+            [beaconManager addObserver:observerForMainOnly forBeaconRegion:beaconRegion];
+            [beaconManager addObserver:observerForMainOnly forBeaconRegion:beaconRegion];
+            expect([beaconManager observersForBeaconRegion:beaconRegion]).to.haveCountOf(1);
+            expect([beaconManager observersForBeaconRegion:beaconRegion]).to.contain(observerForMainOnly);
+        });
 
+        
         it(@"removes observers", ^{
+            [beaconManager addObserver:observerForMainOnly forBeaconRegion:beaconRegion];
+            [beaconManager addObserver:observerForAltOnly forBeaconRegion:altBeaconRegion];
+            [beaconManager addObserver:observerForMainAndAlt forBeaconRegion:beaconRegion];
+            [beaconManager addObserver:observerForMainAndAlt forBeaconRegion:altBeaconRegion];
+            
             [beaconManager removeObserver:observerForAltOnly forBeaconRegion:altBeaconRegion];
             [beaconManager removeObserver:observerForMainAndAlt forBeaconRegion:beaconRegion];
             [beaconManager removeObserver:observerForMainAndAlt forBeaconRegion:altBeaconRegion];
             
             expect([beaconManager observersForBeaconRegion:beaconRegion]).to.haveCountOf(1);
             expect([beaconManager observersForBeaconRegion:beaconRegion].firstObject).to.beIdenticalTo(observerForMainOnly);
-            expect([beaconManager observersForBeaconRegion:altBeaconRegion]).to.haveCountOf(0);
+            expect([beaconManager observersForBeaconRegion:altBeaconRegion]).to.beEmpty();
         });
 
+        
+        it(@"does nothing when removing a observer that is not previously added", ^{
+            [beaconManager removeObserver:observerForMainOnly forBeaconRegion:beaconRegion];
+
+            expect([beaconManager observersForBeaconRegion:beaconRegion]).to.beEmpty();
+            expect([beaconManager observersForBeaconRegion:altBeaconRegion]).to.beEmpty();
+        });
+        
+        
         it(@"ignores removal of observers if observer is not added for the region", ^{
             [beaconManager removeObserver:observerForAltOnly forBeaconRegion:beaconRegion];
+            expect([beaconManager observersForBeaconRegion:beaconRegion]).to.beEmpty();
+            
+            [beaconManager addObserver:observerForMainOnly forBeaconRegion:beaconRegion];
+            [beaconManager addObserver:observerForAltOnly forBeaconRegion:altBeaconRegion];
+            [beaconManager removeObserver:observerForMainAndAlt forBeaconRegion:beaconRegion];
+            [beaconManager removeObserver:observerForMainAndAlt forBeaconRegion:altBeaconRegion];
 
             expect([beaconManager observersForBeaconRegion:beaconRegion]).to.haveCountOf(1);
             expect([beaconManager observersForBeaconRegion:beaconRegion].firstObject).to.beIdenticalTo(observerForMainOnly);
+            expect([beaconManager observersForBeaconRegion:altBeaconRegion]).to.haveCountOf(1);
+            expect([beaconManager observersForBeaconRegion:altBeaconRegion].firstObject).to.beIdenticalTo(observerForAltOnly);
         });
     });
     
@@ -95,6 +137,14 @@ describe(@"MNBeaconManager", ^{
             [beaconManager addObserver:observerForMainAndAlt forBeaconRegion:altBeaconRegion];
             
         });
+        
+        afterEach(^{
+            [beaconManager removeObserver:observerForMainOnly forBeaconRegion:beaconRegion];
+            [beaconManager removeObserver:observerForAltOnly forBeaconRegion:altBeaconRegion];
+            [beaconManager removeObserver:observerForMainAndAlt forBeaconRegion:beaconRegion];
+            [beaconManager removeObserver:observerForMainAndAlt forBeaconRegion:altBeaconRegion];
+        });
+        
         
         it(@"notifies observers when entering region", ^{
             [beaconManager locationManager:nil didEnterRegion:beaconRegion];
@@ -129,7 +179,17 @@ describe(@"MNBeaconManager", ^{
             [verify(observerForMainAndAlt) beaconManager:beaconManager monitoringDidFailForRegion:beaconRegion withError:nil];
             [verifyCount(observerForAltOnly, never()) beaconManager:beaconManager monitoringDidFailForRegion:beaconRegion withError:nil];
         });
+        
+        
+        it(@"ignores observers that released but not removed", ^{
+            observerForMainOnly = nil;
+            
+            [beaconManager locationManager:nil didEnterRegion:beaconRegion];
+            [beaconManager locationManager:nil didExitRegion:beaconRegion];
+            [beaconManager locationManager:nil monitoringDidFailForRegion:beaconRegion withError:nil];
+        });
     });
+    
     
     context(@"when notifiying observers for ranging", ^{
         beforeAll(^{

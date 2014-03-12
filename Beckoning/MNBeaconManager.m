@@ -85,7 +85,7 @@
     NSString *regionIdentifier = region.identifier;
     NSPointerArray *observersForBeaconRegion = self.keyedObservers[regionIdentifier];
     
-    return [[observersForBeaconRegion allObjects] copy];
+    return [observersForBeaconRegion allObjects] ?: [NSArray array];
 }
 
 
