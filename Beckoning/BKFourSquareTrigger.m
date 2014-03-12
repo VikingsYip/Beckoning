@@ -27,12 +27,15 @@
     UIApplication *application = [UIApplication sharedApplication];
     NSArray *nearOrImmediateBeacons = [beacons filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"proximity == %ld || proximity == %ld",
                                                                             CLProximityImmediate, CLProximityNear]];
-    self.backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
-        [application endBackgroundTask: self.backgroundTask];
-        self.backgroundTask = UIBackgroundTaskInvalid;
-    }];
-    
+
     if (nearOrImmediateBeacons.count > 0) {
+        [manager stopRangingBeaconsInRegion:region];
+        
+        self.backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+            [application endBackgroundTask: self.backgroundTask];
+            self.backgroundTask = UIBackgroundTaskInvalid;
+        }];
+        
         [Foursquare2 checkinAddAtVenue:@"4bfdf724e93095217f2862ab" shout:@"Auto check-in" callback:^(BOOL success, id results){
             UILocalNotification *localNotification = [[UILocalNotification alloc] init];
             localNotification.alertBody = [NSString stringWithFormat:@"Checking into R/GA"];
@@ -40,12 +43,11 @@
             localNotification.soundName = UILocalNotificationDefaultSoundName;
             
             [application presentLocalNotificationNow:localNotification];
+            
+            [application endBackgroundTask: self.backgroundTask];
+            self.backgroundTask = UIBackgroundTaskInvalid;
         }];
-
-        [manager stopRangingBeaconsInRegion:region];
     }
-    
-    [application endBackgroundTask: self.backgroundTask];
-    self.backgroundTask = UIBackgroundTaskInvalid;
+
 }
 @end

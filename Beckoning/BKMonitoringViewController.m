@@ -36,13 +36,13 @@
     
     NSSet *monitoredRegions = self.beaconManager.monitoredRegions;
     
-    
     self.monitorGeneralRegionSwitch.on = [monitoredRegions member:self.generalRegion] ? YES : NO;
     self.monitor4sqSwitch.on = [monitoredRegions member:self.foursquareRegion] ? YES: NO;
 
     [self.monitorGeneralRegionSwitch addTarget:self action:@selector(monitoringChanged:) forControlEvents:UIControlEventValueChanged];
     [self.monitor4sqSwitch addTarget:self action:@selector(monitoringChanged:) forControlEvents:UIControlEventValueChanged];
 }
+
 
 
 - (void)monitoringChanged:(id)sender {
